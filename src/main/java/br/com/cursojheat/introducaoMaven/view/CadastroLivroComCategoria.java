@@ -21,7 +21,7 @@ public class CadastroLivroComCategoria {
 		
 		Livro livro =  new Livro();
 		livro.setAnoPublicacao(2010);
-		livro.setTitulo("Teste sem construtor");
+		livro.setTitulo("ManyToMany");
 		livro.setCategoria(categoria);
 		
 		entityManager.persist(livro);

@@ -1,10 +1,12 @@
 package br.com.cursojheat.introducaoMaven.model;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -24,6 +26,9 @@ public class Livro {
 	
 	@ManyToOne
 	private Categoria categoria;
+	
+	@ManyToMany(mappedBy = "listaLivros")
+	private List<Emprestimo> emprestimos;
 	
 	public Long getId() {
 		return id;
@@ -56,6 +61,15 @@ public class Livro {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
+
+	public List<Emprestimo> getEmprestimos() {
+		return emprestimos;
+	}
+
+	public void setEmprestimos(List<Emprestimo> emprestimos) {
+		this.emprestimos = emprestimos;
+	}
+	
 	
 	
 	
